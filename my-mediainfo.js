@@ -1,4 +1,8 @@
 const mediaInfoBin = require("mediainfo-static")
+const fs = require("fs")
+
+// Set as executable
+fs.chmodSync(mediaInfoBin.path, 0o766)
 
 var child_process = require("child_process"),
   parseString = require('xml2js').parseString,
